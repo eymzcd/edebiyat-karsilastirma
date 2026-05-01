@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Türk & İngiliz Edebiyatı Karşılaştırması | TÜBİTAK 4006</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --plum: #4A1942;
+  --burgundy: #7B2D42;
+  --gold: #C9973A;
+  --cream: #F7F3EE;
+  --lightbg: #EDE5DC;
+  --blue: #1A4A6A;
+  --lightblue: #D6E8F3;
+  --muted: #8B7B6E;
+  --dark: #1C0F1E;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--cream);
+  color: #1a1a1a;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--dark);
+  position: sticky; top: 0; z-index: 100;
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.nav-brand { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; }
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { color: #ccc; text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,151,58,0.04) 40px, rgba(201,151,58,0.04) 41px);
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--burgundy);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 2px;
+  padding: 5px 16px; border-radius: 2px;
+  margin-bottom: 1.5rem; position: relative;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #f0e8dc;
+  line-height: 1.2;
+  max-width: 800px; margin: 0 auto 1rem;
+  position: relative;
+}
+.hero h1 span { color: var(--gold); }
+.hero-sub {
+  font-size: 1.05rem; color: var(--muted);
+  font-style: italic; margin-bottom: 2rem;
+  position: relative;
+}
+.hero-meta {
+  display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+  font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: #777;
+  position: relative;
+}
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+/* ── SECTION WRAPPER ── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ── SECTION TITLE ── */
+.section-head {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 2rem;
+}
+.section-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem; font-weight: 900;
+  color: var(--gold); opacity: 0.3; line-height: 1;
+  user-select: none;
+}
+.section-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; color: var(--burgundy);
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 4px;
+}
+
+section { padding: 4rem 0; }
+section:nth-child(even) { background: var(--lightbg); }
+section:nth-child(odd) { background: var(--cream); }
+
+/* ── PROJECT INFO CARDS ── */
+.info-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+}
+.info-card {
+  background: white;
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.info-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; color: var(--burgundy); margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+}
+.info-card p { font-size: 0.92rem; line-height: 1.7; color: #333; }
+
+/* ── AUTHOR TABLE ── */
+.author-table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+thead th {
+  background: var(--plum); color: white;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  padding: 10px 14px; text-align: left; white-space: nowrap;
+}
+tbody tr:nth-child(odd) { background: #fff; }
+tbody tr:nth-child(even) { background: #f9f5f0; }
+tbody tr:hover { background: var(--lightblue); }
+tbody td { padding: 9px 14px; color: #333; border-bottom: 1px solid #e0d5ca; }
+.tag-tr { background: var(--burgundy); color: white; padding: 2px 8px; border-radius: 2px; font-size: 0.75rem; font-family: 'DM Sans'; }
+.tag-en { background: var(--blue); color: white; padding: 2px 8px; border-radius: 2px; font-size: 0.75rem; font-family: 'DM Sans'; }
+
+/* ── THEME GRID ── */
+.theme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.theme-card {
+  background: white;
+  border-top: 3px solid var(--burgundy);
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.theme-card .theme-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+.theme-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--plum); margin-bottom: 0.8rem; }
+.theme-entry { margin-bottom: 0.4rem; font-size: 0.87rem; line-height: 1.5; }
+.theme-entry .flag { font-size: 0.9rem; }
+.theme-entry strong { color: var(--burgundy); }
+.theme-entry.en strong { color: var(--blue); }
+.theme-desc { font-size: 0.83rem; color: var(--muted); font-style: italic; margin-top: 0.5rem; border-top: 1px dashed #ddd; padding-top: 0.5rem; }
+
+/* ── COMPARISON SECTION ── */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media (max-width: 700px) { .compare-grid { grid-template-columns: 1fr; } }
+
+.compare-col { background: white; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.compare-col.tr-col { border-top: 4px solid var(--burgundy); }
+.compare-col.en-col { border-top: 4px solid var(--blue); }
+.compare-col h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 1rem; }
+.compare-col.tr-col h3 { color: var(--burgundy); }
+.compare-col.en-col h3 { color: var(--blue); }
+.compare-col ul { padding-left: 0; list-style: none; }
+.compare-col ul li { font-size: 0.88rem; line-height: 1.6; padding: 5px 0 5px 18px; border-bottom: 1px solid #f0e8e0; position: relative; }
+.compare-col ul li::before { content: "▸"; position: absolute; left: 0; color: var(--gold); }
+
+/* ── FINDINGS ── */
+.findings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.finding-card {
+  display: flex; gap: 1rem; background: white;
+  padding: 1.3rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.finding-num {
+  font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900;
+  color: var(--gold); opacity: 0.4; line-height: 1; flex-shrink: 0;
+}
+.finding-text h4 { font-size: 0.95rem; color: var(--burgundy); margin-bottom: 5px; font-family: 'DM Sans'; font-weight: 500; }
+.finding-text p { font-size: 0.85rem; line-height: 1.55; color: #444; }
+
+/* ── QUOTE BLOCK ── */
+.quote-block {
+  background: var(--dark);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.quote-block blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: #f0e8dc; font-style: italic;
+  max-width: 700px; margin: 0 auto 0.8rem; line-height: 1.5;
+}
+.quote-block cite {
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--gold);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark); color: #666;
+  padding: 2rem; text-align: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.8rem; line-height: 1.8;
+}
+footer a { color: var(--gold); text-decoration: none; }
+
+/* ── SCROLL ANIMATION ── */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">📚 TÜBİTAK 4006 — Edebiyat Karşılaştırması</div>
+  <div class="nav-links">
+    <a href="#proje">Proje</a>
+    <a href="#yazarlar">Yazarlar</a>
+    <a href="#temalar">Temalar</a>
+    <a href="#tiyatro">Tiyatro</a>
+    <a href="#siir">Şiir</a>
+    <a href="#sonuclar">Sonuçlar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">TÜBİTAK 4006 · DIL VE EDEBİYAT · 2025</div>
+  <h1>İngiliz ve Türk <span>Yazar/Şairlerin</span> Eserlerinde<br>Temalar ve Üslup Karşılaştırması</h1>
+  <p class="hero-sub">19. ve 20. Yüzyıl Edebiyatında Ortak Paydalar ve Kültürel Farklılıklar</p>
+  <div class="hero-meta">
+    <span>📖 Dil ve Edebiyat</span>
+    <span>🔬 İnceleme Projesi</span>
+    <span>👨‍🏫 Ş.Levent YAYKLN · Bünyamin ABAY</span>
+    <span>📅 2025</span>
+  </div>
+</div>
+
+<!-- PROJE -->
+<section id="proje">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-num">01</span>
+      <h2>Proje Hakkında</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card fade-in">
+        <h3>🎯 AMAÇ</h3>
+        <p>Öğrenciler, 19. ve 20. yüzyılın son çeyreğinde yaşamış İngiliz ve Türk yazar/şairlerin eserlerini inceleyerek ortak temaları, üslup farklılıklarını ve kültürel etkileşimleri karşılaştırmayı öğreneceklerdir.</p>
+      </div>
+      <div class="info-card fade-in">
+        <h3>🔬 YÖNTEM</h3>
+        <p>En az 2 Türk ve 2 İngiliz yazar/şair eseri incelenmiş; temalar ve üslup özellikleri not edilmiştir. Kısa alıntılar seçilerek benzerlikler ve farklılıklar karşılaştırılmış, veriler tablolar ve grafiklerle görselleştirilmiştir.</p>
+      </div>
+      <div class="info-card fade-in">
+        <h3>📊 BEKLENEN SONUÇ</h3>
+        <p>Karşılaştırmalı poster ve slayt sunumları, tema grafikleri, kısa video/animasyonlar ve blog/web sayfası oluşturulacaktır. Eleştirel düşünme ve kültürel farkındalık güçlendirilecektir.</p>
+      </div>
+      <div class="info-card fade-in">
+        <h3>🏫 PROBLEM CÜMLESİ</h3>
+        <p>Farklı kültürlerde (Türk ve İngiliz) ancak benzer tarihsel dönemlerde (19.-20. yy) eser veren yazar ve şairlerin, işledikleri temalar ve kullandıkları üsluplar açısından ne tür benzerlik ve farklılıkları bulunmaktadır?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YAZARLAR -->
+<section id="yazarlar">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-num">02</span>
+      <h2>Karşılaştırılan Yazar ve Şairler</h2>
+    </div>
+    <div class="author-table-wrap fade-in">
+      <table>
+        <thead>
+          <tr>
+            <th>Yazar / Şair</th>
+            <th>Milliyet</th>
+            <th>Dönem</th>
+            <th>Tür</th>
+            <th>Başlıca Eser(ler)</th>
+            <th>Karşılaştırma Eşi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Namık Kemal</strong></td><td><span class="tag-tr">🇹🇷 TÜRK</span></td><td>1840–1888</td><td>Tiyatro / Şiir</td><td>Vatan Yahut Silistre, Hürriyet Kasidesi</td><td>G.B. Shaw</td></tr>
+          <tr><td><strong>Şinasi</strong></td><td><span class="tag-tr">🇹🇷 TÜRK</span></td><td>1826–1871</td><td>Tiyatro / Şiir</td><td>Şair Evlenmesi</td><td>Oscar Wilde</td></tr>
+          <tr><td><strong>Abdülhak Hamit</strong></td><td><span class="tag-tr">🇹🇷 TÜRK</span></td><td>1852–1937</td><td>Şiir / Tiyatro</td><td>Makber, Sahra</td><td>John Keats</td></tr>
+          <tr><td><strong>Orhan Veli Kanık</strong></td><td><span class="tag-tr">🇹🇷 TÜRK</span></td><td>1914–1950</td><td>Şiir</td><td>Anlatamıyorum, Kitabe-i Seng-i Mezar</td><td>William Blake</td></tr>
+          <tr><td><strong>Haldun Taner</strong></td><td><span class="tag-tr">🇹🇷 TÜRK</span></td><td>1915–1986</td><td>Tiyatro</td><td>Keşanlı Ali Destanı</td><td>Bertolt Brecht</td></tr>
+          <tr><td><strong>Necip Fazıl</strong></td><td><span class="tag-tr">🇹🇷 TÜRK</span></td><td>1905–1983</td><td>Şiir</td><td>Çile, Tohum</td><td>T.S. Eliot</td></tr>
+          <tr><td><strong>Charles Dickens</strong></td><td><span class="tag-en">🇬🇧 İNGİLİZ</span></td><td>1812–1870</td><td>Roman</td><td>Oliver Twist, A Tale of Two Cities</td><td>Namık Kemal</td></tr>
+          <tr><td><strong>Oscar Wilde</strong></td><td><span class="tag-en">🇬🇧 İNGİLİZ</span></td><td>1854–1900</td><td>Tiyatro</td><td>The Importance of Being Earnest</td><td>Şinasi</td></tr>
+          <tr><td><strong>William Blake</strong></td><td><span class="tag-en">🇬🇧 İNGİLİZ</span></td><td>1757–1827</td><td>Şiir</td><td>Songs of Innocence and Experience</td><td>Namık Kemal</td></tr>
+          <tr><td><strong>John Keats</strong></td><td><span class="tag-en">🇬🇧 İNGİLİZ</span></td><td>1795–1821</td><td>Şiir</td><td>Ode to a Nightingale, Hyperion</td><td>Abdülhak Hamit</td></tr>
+          <tr><td><strong>T.S. Eliot</strong></td><td><span class="tag-en">🇬🇧 İNGİLİZ</span></td><td>1888–1965</td><td>Şiir</td><td>The Waste Land, Four Quartets</td><td>Necip Fazıl</td></tr>
+          <tr><td><strong>G.B. Shaw</strong></td><td><span class="tag-en">🇬🇧 İNGİLİZ</span></td><td>1856–1950</td><td>Tiyatro</td><td>Pygmalion, Man and Superman</td><td>Namık Kemal</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TEMALAR -->
+<section id="temalar">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-num">03</span>
+      <h2>Ortak Temalar</h2>
+    </div>
+    <div class="theme-grid">
+      <div class="theme-card fade-in">
+        <div class="theme-icon">❤️</div>
+        <h4>Aşk ve Ayrılık</h4>
+        <div class="theme-entry"><span class="flag">🇹🇷</span> <strong>Namık Kemal</strong> — Akif Bey</div>
+        <div class="theme-entry en"><span class="flag">🇬🇧</span> <strong>Keats</strong> — La Belle Dame Sans Merci</div>
+        <div class="theme-desc">Romantik aşkın ve ayrılığın acısı; her iki edebiyatta da evrensel bir hüzün dili</div>
+      </div>
+      <div class="theme-card fade-in">
+        <div class="theme-icon">⚖️</div>
+        <h4>Özgürlük ve Hürriyet</h4>
+        <div class="theme-entry"><span class="flag">🇹🇷</span> <strong>Namık Kemal</strong> — Hürriyet Kasidesi</div>
+        <div class="theme-entry en"><span class="flag">🇬🇧</span> <strong>Blake</strong> — London</div>
+        <div class="theme-desc">Toplumsal baskıya karşı bireysel özgürlük arayışı; farklı bağlamlarda aynı özlem</div>
+      </div>
+      <div class="theme-card fade-in">
+        <div class="theme-icon">🌍</div>
+        <h4>Toplumsal Değişim</h4>
+        <div class="theme-entry"><span class="flag">🇹🇷</span> <strong>Şinasi</strong> — Şair Evlenmesi</div>
+        <div class="theme-entry en"><span class="flag">🇬🇧</span> <strong>Dickens</strong> — Oliver Twist</div>
+        <div class="theme-desc">Modernleşme sürecinde gelenekle çatışma; sınıfsal eşitsizliğin eleştirisi</div>
+      </div>
+      <div class="theme-card fade-in">
+        <div class="theme-icon">🪦</div>
+        <h4>Ölüm ve Yas</h4>
+        <div class="theme-entry"><span class="flag">🇹🇷</span> <strong>Abdülhak Hamit</strong> — Makber</div>
+        <div class="theme-entry en"><span class="flag">🇬🇧</span> <strong>Tennyson</strong> — In Memoriam</div>
+        <div class="theme-desc">Sevilen birinin yitimi; ölümle yüzleşme ve anlam arayışı; dini ve felsefi boyutlar</div>
+      </div>
+      <div class="theme-card fade-in">
+        <div class="theme-icon">🏛️</div>
+        <h4>Vatan ve Kimlik</h4>
+        <div class="theme-entry"><span class="flag">🇹🇷</span> <strong>Ziya Paşa</strong> — Terkib-i Bent</div>
+        <div class="theme-entry en"><span class="flag">🇬🇧</span> <strong>T.S. Eliot</strong> — The Waste Land</div>
+        <div class="theme-desc">Kültürel çöküş kaygısı; kimlik ve medeniyet sorgulaması</div>
+      </div>
+      <div class="theme-card fade-in">
+        <div class="theme-icon">🧠</div>
+        <h4>Bireysel Psikoloji</h4>
+        <div class="theme-entry"><span class="flag">🇹🇷</span> <strong>Necip Fazıl</strong> — Çile</div>
+        <div class="theme-entry en"><span class="flag">🇬🇧</span> <strong>Virginia Woolf</strong> — Mrs Dalloway</div>
+        <div class="theme-desc">İç dünyaya yolculuk; bilinç akışı; 20. yüzyılda her iki edebiyatta belirginleşen yönelim</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TİYATRO -->
+<section id="tiyatro">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-num">04</span>
+      <h2>Tiyatro Karşılaştırması</h2>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col tr-col fade-in">
+        <h3>🇹🇷 Türk Tiyatrosu</h3>
+        <ul>
+          <li><strong>19. yy:</strong> Tanzimat ile Batı taklidi; tuluat'tan metne geçiş</li>
+          <li><strong>Üslup:</strong> Didaktik; "sanat toplum içindir" anlayışı</li>
+          <li><strong>Öne çıkan eser:</strong> Vatan Yahut Silistre (Namık Kemal, 1873)</li>
+          <li><strong>Temel tema:</strong> Vatan sevdası, hürriyet, fedakârlık</li>
+          <li><strong>20. yy:</strong> Epik tiyatro; Keşanlı Ali Destanı (Haldun Taner)</li>
+          <li><strong>Psikolojik derinlik:</strong> Necip Fazıl Kısakürek'in eserleri</li>
+        </ul>
+      </div>
+      <div class="compare-col en-col fade-in">
+        <h3>🇬🇧 İngiliz Tiyatrosu</h3>
+        <ul>
+          <li><strong>19. yy:</strong> Romantik → Realist dönüşüm; Viktoryen sahne</li>
+          <li><strong>Üslup:</strong> Estetik ve mizahi; "sanat sanat içindir"</li>
+          <li><strong>Öne çıkan eser:</strong> The Importance of Being Earnest (Wilde, 1895)</li>
+          <li><strong>Temel tema:</strong> Sosyal eleştiri, bireysel çatışma, ahlak</li>
+          <li><strong>20. yy:</strong> Absürd tiyatro; Pinter, Beckett</li>
+          <li><strong>Toplumsal boyut:</strong> Shaw'ın sınıf eleştirisi (Pygmalion)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ŞİİR -->
+<section id="siir">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-num">05</span>
+      <h2>Şiir Karşılaştırması</h2>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col tr-col fade-in">
+        <h3>🇹🇷 Türk Şiiri</h3>
+        <ul>
+          <li><strong>19. yy:</strong> Divan geleneğinden kopuş; yeni kavramlar</li>
+          <li><strong>Üslup:</strong> Ağır Osmanlıca; kahraman söylemi</li>
+          <li><strong>Temalar:</strong> Vatan, hürriyet, toplumsal direniş</li>
+          <li><strong>Namık Kemal:</strong> Hürriyet Kasidesi — "azm-i cezm-i cehd"</li>
+          <li><strong>20. yy:</strong> Garip akımı; serbest nazım; sade Türkçe</li>
+          <li><strong>Orhan Veli:</strong> Gündelik hayatın şiiri; hüzün ve ironi</li>
+        </ul>
+      </div>
+      <div class="compare-col en-col fade-in">
+        <h3>🇬🇧 İngiliz Şiiri</h3>
+        <ul>
+          <li><strong>19. yy:</strong> Romantizm; doğa, aşk, ölüm temaları</li>
+          <li><strong>Üslup:</strong> Lirik; yoğun imgelem; biçim vurgusu</li>
+          <li><strong>Keats:</strong> "Ode to a Nightingale" — güzellik ve ölüm</li>
+          <li><strong>Blake:</strong> "London" — toplumsal baskı eleştirisi</li>
+          <li><strong>20. yy:</strong> Modernizm; parçalı anlatı; deneysellik</li>
+          <li><strong>T.S. Eliot:</strong> "The Waste Land" — kültürel çöküş</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BULGULAR -->
+<section id="sonuclar">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-num">06</span>
+      <h2>Bulgular ve Sonuçlar</h2>
+    </div>
+    <div class="findings-grid">
+      <div class="finding-card fade-in">
+        <div class="finding-num">01</div>
+        <div class="finding-text">
+          <h4>Evrensel Duygular</h4>
+          <p>Farklı coğrafyalarda yaşayan yazarlar; aşk, ölüm ve özgürlük gibi ortak insani duyguları benzer yoğunlukta işlemiştir.</p>
+        </div>
+      </div>
+      <div class="finding-card fade-in">
+        <div class="finding-num">02</div>
+        <div class="finding-text">
+          <h4>Üslup Farklılıkları</h4>
+          <p>Türk edebiyatı 19. yy'da didaktik üslubu benimserken, İngiliz edebiyatı estetik bireyselliği ön planda tutmuştur.</p>
+        </div>
+      </div>
+      <div class="finding-card fade-in">
+        <div class="finding-num">03</div>
+        <div class="finding-text">
+          <h4>Paralel Dönüşümler</h4>
+          <p>Her iki edebiyatta da 19'dan 20. yüzyıla geçişte kolektif anlatıdan bireysel psikolojiye doğru belirgin bir kayış gözlemlenmiştir.</p>
+        </div>
+      </div>
+      <div class="finding-card fade-in">
+        <div class="finding-num">04</div>
+        <div class="finding-text">
+          <h4>Kültürel Köprü</h4>
+          <p>Edebiyat; Türk-İngiliz kültürel sınırlarını aşmada güçlü bir araç işlevi görmüş, ortak insanlık paydalarını ortaya koymuştur.</p>
+        </div>
+      </div>
+      <div class="finding-card fade-in">
+        <div class="finding-num">05</div>
+        <div class="finding-text">
+          <h4>Dil Dönüşümü</h4>
+          <p>Türk şiirinde ağır Osmanlıca'dan sade Türkçe'ye geçiş, İngiliz edebiyatındaki Viktoryen dilden modern deneysel dile geçişle kısmen örtüşmektedir.</p>
+        </div>
+      </div>
+      <div class="finding-card fade-in">
+        <div class="finding-num">06</div>
+        <div class="finding-text">
+          <h4>Estetik Duyarlılık</h4>
+          <p>Öğrenciler, farklı kültürlerdeki eserleri aynı çerçevede değerlendirerek estetik algılarını ve eleştirel düşünme becerilerini güçlendirmiştir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-block">
+  <blockquote>"Edebiyat; milletlerin vicdanıdır."</blockquote>
+  <cite>— Namık Kemal</cite>
+  <br><br>
+  <blockquote style="font-size:1.2rem;">"Literature is the mirror of society."</blockquote>
+  <cite>— George Bernard Shaw</cite>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong style="color: #aaa;">TÜBİTAK 4006 Bilim Fuarları Destekleme Programı</strong></p>
+  <p>Proje Adı: Aynı Dönemde Yaşayan İngiliz ve Türk Yazar/Şairlerin Eserlerinde Temalar ve Üslup Karşılaştırması</p>
+  <p>Danışman Öğretmenler: Ş.Levent YAYKLN · Bünyamin ABAY &nbsp;|&nbsp; Dil ve Edebiyat · 2025</p>
+  <p style="margin-top:1rem; font-size:0.72rem;">Kaynaklar: TDV İslâm Ansiklopedisi · TDK · TEİS · Wikipedia · TÜBİTAK 4006 Proje Rehberi · MEB Müfredat İçerikleri</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
